@@ -1,0 +1,55 @@
+<PAMDataset>
+  <Subdataset name="bedrock_elevation">
+    <PAMDataset>
+      <Metadata>
+        <MDI key="bedrock_elevation#grid_mapping">spatial_ref</MDI>
+        <MDI key="bedrock_elevation#long_name">bedrock topography</MDI>
+        <MDI key="bedrock_elevation#units">m</MDI>
+        <MDI key="bedrock_elevation#_FillValue">-9999</MDI>
+        <MDI key="NC_GLOBAL#Conventions">CF-1.8</MDI>
+        <MDI key="NC_GLOBAL#CRS">EPSG:32718</MDI>
+        <MDI key="NC_GLOBAL#NOTE">NPI (100 m) and SPI (200 m) aligned to a 200 m grid using bilinear</MDI>
+        <MDI key="NC_GLOBAL#NPI_NATIVE_RESOLUTION">100 m</MDI>
+        <MDI key="NC_GLOBAL#NPI_SOURCE">RGI60-17.07823</MDI>
+        <MDI key="NC_GLOBAL#RESAMPLING">bilinear</MDI>
+        <MDI key="NC_GLOBAL#RESOLUTION">200 m</MDI>
+        <MDI key="NC_GLOBAL#SPI_NATIVE_RESOLUTION">200 m</MDI>
+        <MDI key="NC_GLOBAL#SPI_SOURCE">RGI60-17.00154</MDI>
+        <MDI key="NC_GLOBAL#TITLE">Frank et al. 2026</MDI>
+        <MDI key="spatial_ref#crs_wkt">PROJCS["WGS 84 / UTM zone 18S",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-75],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",10000000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32718"]]</MDI>
+        <MDI key="spatial_ref#false_easting">500000</MDI>
+        <MDI key="spatial_ref#false_northing">10000000</MDI>
+        <MDI key="spatial_ref#geographic_crs_name">WGS 84</MDI>
+        <MDI key="spatial_ref#grid_mapping_name">transverse_mercator</MDI>
+        <MDI key="spatial_ref#horizontal_datum_name">World Geodetic System 1984</MDI>
+        <MDI key="spatial_ref#inverse_flattening">298.257223563</MDI>
+        <MDI key="spatial_ref#latitude_of_projection_origin">0</MDI>
+        <MDI key="spatial_ref#longitude_of_central_meridian">-75</MDI>
+        <MDI key="spatial_ref#longitude_of_prime_meridian">0</MDI>
+        <MDI key="spatial_ref#prime_meridian_name">Greenwich</MDI>
+        <MDI key="spatial_ref#projected_crs_name">WGS 84 / UTM zone 18S</MDI>
+        <MDI key="spatial_ref#reference_ellipsoid_name">WGS 84</MDI>
+        <MDI key="spatial_ref#scale_factor_at_central_meridian">0.9996</MDI>
+        <MDI key="spatial_ref#semi_major_axis">6378137</MDI>
+        <MDI key="spatial_ref#semi_minor_axis">6356752.314245179</MDI>
+        <MDI key="spatial_ref#spatial_ref">PROJCS["WGS 84 / UTM zone 18S",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-75],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",10000000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32718"]]</MDI>
+        <MDI key="x#axis">X</MDI>
+        <MDI key="x#long_name">x coordinate of projection</MDI>
+        <MDI key="x#standard_name">projection_x_coordinate</MDI>
+        <MDI key="x#units">metre</MDI>
+        <MDI key="y#axis">Y</MDI>
+        <MDI key="y#long_name">y coordinate of projection</MDI>
+        <MDI key="y#standard_name">projection_y_coordinate</MDI>
+        <MDI key="y#units">metre</MDI>
+      </Metadata>
+      <PAMRasterBand band="1">
+        <Metadata>
+          <MDI key="STATISTICS_MINIMUM">-897.39829834509</MDI>
+          <MDI key="STATISTICS_MAXIMUM">3921.1859240516</MDI>
+          <MDI key="STATISTICS_MEAN">962.50044117939</MDI>
+          <MDI key="STATISTICS_STDDEV">667.43656189392</MDI>
+        </Metadata>
+      </PAMRasterBand>
+    </PAMDataset>
+  </Subdataset>
+</PAMDataset>

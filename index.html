@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b3c">
+  <title>Explorador de los Campos de Hielo Patagónicos</title>
+  <link rel="stylesheet" href="./vendor/maplibre-gl.css">
+  <link rel="stylesheet" href="./style.css?v=basal-20261020-lines">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand" aria-label="Explorador de los Campos de Hielo Patagónicos">
+      <svg viewBox="0 0 44 32" aria-hidden="true"><path d="m2 29 13-23 7 12 5-15 15 26H2Z"/><path d="m10 15 5 3 4-5M23 15l4 3 4-7"/></svg>
+      <span>EXPLORADOR<small>CAMPOS DE HIELO PATAGÓNICOS</small></span>
+    </div>
+    <span class="chapter"><b>01</b> Área de estudio</span>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar">
+      <p class="eyebrow"><i></i> PATAGONIA · ANDES AUSTRALES</p>
+      <h1>Campos de hielo<br><em>Patagónicos.</em></h1>
+      <p class="lead">Explora la superficie, el terreno bajo el hielo, la corrección y la carga hidráulica en 3D.</p>
+      <section class="layers" aria-label="Superficie 3D">
+        <h2>Superficie 3D <span>SELECCIONA UNA CAPA</span></h2>
+        <label class="layer-row"><span class="swatch surface"></span><span>Elevación superficial<small>SRTM DEM · 30 m</small></span><input type="radio" name="terrain" value="surface" checked></label>
+        <label class="layer-row"><span class="swatch basal"></span><span>Elevación basal<small>Fürst · 100 m, bajo el hielo</small></span><input type="radio" name="terrain" value="basal"></label>
+        <label class="layer-row"><span class="swatch hydraulic correction"></span><span>Corrección de carga hidráulica<small>Diferencia · 100 m</small></span><input type="radio" name="terrain" value="hydraulic-correction"></label>
+        <label class="layer-row"><span class="swatch hydraulic filled"></span><span>Carga hidráulica rellenada<small>Mapa rellenado · 100 m</small></span><input type="radio" name="terrain" value="hydraulic-filled"></label>
+        <div id="custom-surfaces"></div>
+        <p class="layer-note">La elevación basal usa SRTM fuera del hielo. Las otras variables forman su propio relieve 3D y quedan planas donde no tienen datos.</p>
+        <div id="vertical-controls" class="vertical-controls" hidden>
+          <label for="vertical-exaggeration">Escala vertical <output id="vertical-exaggeration-value" for="vertical-exaggeration">1×</output></label>
+          <input id="vertical-exaggeration" type="range" min="1" max="10" step="1" value="1">
+          <p>Amplía el relieve para verlo mejor. Los datos y la leyenda mantienen sus valores originales.</p>
+        </div>
+      </section>
+      <section class="overlays" aria-label="Capas del mapa">
+        <h2>Capas del mapa <span>ACTIVA/DESACTIVA</span></h2>
+        <label class="layer-row layer-toggle"><span class="satellite-swatch"></span><span>Imagen satelital Esri<small>World Imagery · sobre la superficie 3D</small></span><input id="show-satellite" type="checkbox" aria-label="Mostrar imagen satelital Esri"></label>
+        <label class="layer-row layer-toggle"><span class="outline-swatch rgi"></span><span>Glaciares RGI v6<small>Contornos rojos</small></span><input id="show-rgi" type="checkbox" checked aria-label="Mostrar contornos RGI v6"></label>
+        <label class="layer-row layer-toggle"><span class="outline-swatch gradient"></span><span>Gradiente hidráulico<small>Delimitación · calypso</small></span><input id="show-gradient" type="checkbox" checked aria-label="Mostrar delimitación de gradiente hidráulico"></label>
+        <div id="custom-overlays"></div>
+        <div id="custom-geometries"></div>
+      </section>
+      <section class="legend" id="elevation-legend" aria-label="Leyenda de elevación">
+        <h2>Elevación <span>m s.n.m. · MATPLOTLIB TERRAIN</span></h2>
+        <div class="colorbar" role="img" aria-label="Paleta compartida: azul desde menos 600 hasta 0 metros; verde, marrón y blanco desde 0 hasta 4000 metros"></div>
+        <div class="colorbar-labels"><span>−600</span><span>0</span><span>2.000</span><span>4.000</span></div>
+      </section>
+      <section class="legend hydraulic-legend" id="hydraulic-legend" aria-label="Leyenda de carga hidráulica" hidden>
+        <h2>Carga hidráulica rellenada <span>m · MATPLOTLIB YlGnBu</span></h2>
+        <div class="colorbar hydraulic-colorbar" role="img" aria-label="Paleta YlGnBu para carga hidráulica desde menos 4 hasta 3800 metros"></div>
+        <div class="colorbar-labels hydraulic-labels"><span>−4</span><span>1.000</span><span>2.000</span><span>3.800</span></div>
+      </section>
+      <section class="legend correction-legend" id="correction-legend" aria-label="Leyenda de corrección de carga hidráulica" hidden>
+        <h2>Corrección de carga <span>m · MATPLOTLIB Reds</span></h2>
+        <div class="colorbar correction-colorbar" role="img" aria-label="Paleta Reds: blanco para cero y rojo oscuro para diferencias de 320 metros o más"></div>
+        <div class="colorbar-labels correction-labels"><span>0</span><span>100</span><span>200</span><span>320+</span></div>
+      </section>
+      <section class="legend" id="custom-legend" aria-label="Leyenda de la superficie seleccionada" hidden>
+        <h2 id="custom-legend-title"></h2>
+        <img id="custom-colorbar" class="custom-colorbar" alt="">
+        <div class="custom-colorbar-labels"><span></span><span></span><span></span><span></span></div>
+      </section>
+      <div id="overlay-legends"></div>
+    </aside>
+    <section class="map-panel" aria-label="Mapa 3D de los Campos de Hielo Patagónicos">
+      <div id="map"></div>
+      <div class="map-top"><div class="map-heading"><i></i><span>PATAGONIA<small id="view-label">Elevación superficial · relieve 3D</small></span></div></div>
+      <div class="map-actions"><button id="reset-view" aria-label="Volver a la vista inicial" title="Vista inicial">⌖</button><button id="zoom-in" aria-label="Acercar">+</button><button id="zoom-out" aria-label="Alejar">−</button><button id="rotate-view" aria-label="Girar mapa" title="Girar mapa">↻</button></div>
+      <div id="map-message" class="map-message" role="status">Preparando el relieve…</div>
+      <div class="map-bottom"><div class="imagery-label"><span>SUPERFICIES 3D</span><strong id="source-label">SRTM DEM</strong><small id="height-label">ALTURA 3D · 1×</small></div><div class="map-hint">Arrastra para explorar · Ctrl + arrastrar para girar</div></div>
+    </section>
+  </main>
+  <script type="module" src="./app.js?v=basal-20261020-lines"></script>
+</body>
+</html>

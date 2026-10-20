@@ -1,0 +1,128 @@
+{
+  "surfaces": [
+    {
+      "id": "basal-frank-2026",
+      "label": "Elevación basal · Frank 2026",
+      "description": "Lecho rocoso · resolución 200 m",
+      "unit": "m",
+      "display": "own",
+      "visible": false,
+      "clip": null,
+      "range": [
+        -1000,
+        4000
+      ],
+      "bounds": [
+        -74.2127871958523,
+        -51.452558880100774,
+        -72.87001653700571,
+        -46.44873291413315
+      ],
+      "minzoom": 5,
+      "maxzoom": 10,
+      "height": {
+        "mode": "value",
+        "scale": 1,
+        "offset": 0
+      },
+      "demTiles": "./terrain/custom-builds/b6ee4e17310d/basal-frank-2026/dem/{z}/{x}/{y}.png",
+      "colorTiles": "./terrain/custom-builds/b6ee4e17310d/basal-frank-2026/color/{z}/{x}/{y}.png",
+      "colorbar": "./terrain/custom-builds/b6ee4e17310d/basal-frank-2026/colorbar.png"
+    },
+    {
+      "id": "basal-maffezzoli-2026",
+      "label": "Elevación basal · Maffezzoli 2026",
+      "description": "Lecho rocoso · resolución 100 m · geoide EIGEN-6C4",
+      "unit": "m",
+      "display": "own",
+      "visible": false,
+      "clip": null,
+      "range": [
+        -1000,
+        4000
+      ],
+      "bounds": [
+        -74.22060049982103,
+        -51.458017091724415,
+        -72.86257651340739,
+        -46.44862303063269
+      ],
+      "minzoom": 5,
+      "maxzoom": 10,
+      "height": {
+        "mode": "value",
+        "scale": 1,
+        "offset": 0
+      },
+      "demTiles": "./terrain/custom-builds/b6ee4e17310d/basal-maffezzoli-2026/dem/{z}/{x}/{y}.png",
+      "colorTiles": "./terrain/custom-builds/b6ee4e17310d/basal-maffezzoli-2026/color/{z}/{x}/{y}.png",
+      "colorbar": "./terrain/custom-builds/b6ee4e17310d/basal-maffezzoli-2026/colorbar.png"
+    }
+  ],
+  "overlays": [],
+  "geometries": [
+    {
+      "id": "cuencas-frank-2026",
+      "label": "Cuencas · Frank 2026",
+      "description": "Delimitación de cuencas · Frank",
+      "bounds": [
+        -74.17628926648995,
+        -51.44592951148099,
+        -72.97247553601838,
+        -46.45357217666336
+      ],
+      "color": "#28b7a5",
+      "width": 1.5,
+      "radius": 5,
+      "fillOpacity": 0,
+      "visible": false,
+      "geojson": "./terrain/custom-builds/b6ee4e17310d/cuencas-frank-2026/features.geojson",
+      "featureCount": 4432,
+      "geometryTypes": [
+        "POLYGON"
+      ]
+    },
+    {
+      "id": "cuencas-maffezzoli-2026",
+      "label": "Cuencas · Maffezzoli 2026",
+      "description": "Delimitación de cuencas · Maffezzoli",
+      "bounds": [
+        -74.17901441684776,
+        -51.45107863730803,
+        -72.86504855991576,
+        -46.450085748128814
+      ],
+      "color": "#e3a44b",
+      "width": 1.5,
+      "radius": 5,
+      "fillOpacity": 0,
+      "visible": false,
+      "geojson": "./terrain/custom-builds/b6ee4e17310d/cuencas-maffezzoli-2026/features.geojson",
+      "featureCount": 20572,
+      "geometryTypes": [
+        "POLYGON"
+      ]
+    },
+    {
+      "id": "cuencas-fuerst-dhdt-25",
+      "label": "Cuencas dh/dt · Fürst (25 años)",
+      "description": "Cuencas de carga hidráulica derivadas de dh/dt",
+      "bounds": [
+        -74.1749119195498,
+        -51.44680971093297,
+        -72.97118018464404,
+        -46.456117568454246
+      ],
+      "color": "#b16fdd",
+      "width": 1.5,
+      "radius": 5,
+      "fillOpacity": 0,
+      "visible": false,
+      "geojson": "./terrain/custom-builds/b6ee4e17310d/cuencas-fuerst-dhdt-25/features.geojson",
+      "featureCount": 6178,
+      "geometryTypes": [
+        "POLYGON"
+      ]
+    }
+  ]
+}

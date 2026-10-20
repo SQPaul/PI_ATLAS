@@ -1,0 +1,63 @@
+{
+  "surfaces": [
+    {
+      "id": "basal-frank-2026",
+      "file": "Frank_2026_200m.nc",
+      "variable": "bedrock_elevation",
+      "label": "Elevación basal · Frank 2026",
+      "description": "Lecho rocoso · resolución 200 m",
+      "unit": "m",
+      "palette": "terrain",
+      "range": [-1000, 4000],
+      "display": "own",
+      "height": {"mode": "value", "scale": 1, "offset": 0}
+    },
+    {
+      "id": "basal-maffezzoli-2026",
+      "file": "Maffezzoli_2026_100m.nc",
+      "variable": "bedrock_elevation",
+      "label": "Elevación basal · Maffezzoli 2026",
+      "description": "Lecho rocoso · resolución 100 m · geoide EIGEN-6C4",
+      "unit": "m",
+      "palette": "terrain",
+      "range": [-1000, 4000],
+      "display": "own",
+      "height": {"mode": "value", "scale": 1, "offset": 0}
+    }
+  ],
+  "geometries": [
+    {
+      "id": "cuencas-frank-2026",
+      "file": "catchment_Frank2026.gpkg",
+      "layer": "catchment_Frank2026",
+      "label": "Cuencas · Frank 2026",
+      "description": "Delimitación de cuencas · Frank",
+      "color": "#28b7a5",
+      "width": 1.5,
+      "simplify_m": 50,
+      "visible": false
+    },
+    {
+      "id": "cuencas-maffezzoli-2026",
+      "file": "catchment_Maffezzoli2026_200m.gpkg",
+      "layer": "catchment_Maffezzoli2026_200m",
+      "label": "Cuencas · Maffezzoli 2026",
+      "description": "Delimitación de cuencas · Maffezzoli",
+      "color": "#e3a44b",
+      "width": 1.5,
+      "simplify_m": 50,
+      "visible": false
+    },
+    {
+      "id": "cuencas-fuerst-dhdt-25",
+      "file": "catchment_Fuerst_dhdt_hydraulic_head_25years.gpkg",
+      "layer": "catchment_Fuerst_dhdt_hydraulic_head_25years",
+      "label": "Cuencas dh/dt · Fürst (25 años)",
+      "description": "Cuencas de carga hidráulica derivadas de dh/dt",
+      "color": "#b16fdd",
+      "width": 1.5,
+      "simplify_m": 50,
+      "visible": false
+    }
+  ]
+}

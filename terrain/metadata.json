@@ -1,0 +1,25 @@
+{
+  "bounds": [
+    -74.22060049982103,
+    -51.458017091724415,
+    -72.86257651340739,
+    -46.44862303063269
+  ],
+  "minzoom": 5,
+  "maxzoom": 10,
+  "surface": {
+    "file": "DEM_SRTM.nc",
+    "variable": "dem"
+  },
+  "basal": {
+    "file": "Fuerst_2024.nc",
+    "variable": "bedrock_elevation"
+  },
+  "palette": "Matplotlib terrain; negative values use ocean section 0\u20130.17; nonnegative use land section 0.25\u20131",
+  "palette_range_m": [
+    -600,
+    4000
+  ],
+  "basal_outside_coverage": "SRTM surface context",
+  "tile_pairs": 177
+}

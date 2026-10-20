@@ -1,0 +1,39 @@
+{
+  "bounds": [
+    -74.22060049982103,
+    -51.458017091724415,
+    -72.86257651340739,
+    -46.44862303063269
+  ],
+  "minzoom": 5,
+  "maxzoom": 10,
+  "palettes": {
+    "hydraulic-correction": {
+      "name": "Matplotlib Reds",
+      "magnitude_range_m": [
+        0,
+        320
+      ]
+    },
+    "hydraulic-filled": {
+      "name": "Matplotlib YlGnBu",
+      "range_m": [
+        -4,
+        3800
+      ]
+    }
+  },
+  "sources": {
+    "hydraulic-correction": {
+      "file": "Fuerts_2024_hydraulic_head_catchments.nc",
+      "variable": "hydraulic_head_difference"
+    },
+    "hydraulic-filled": {
+      "file": "Fuerts_2024_hydraulic_head_catchments.nc",
+      "variable": "hydraulic_head_filled"
+    }
+  },
+  "terrain_height_inside_coverage": "absolute correction magnitude or raw filled head",
+  "terrain_height_outside_coverage": "zero plane",
+  "tile_pairs": 177
+}
